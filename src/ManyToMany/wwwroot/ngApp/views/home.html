@@ -1,0 +1,27 @@
+<div class="col-xs-2">
+</div>
+<div class="col-xs-8">
+    <h1>Movies</h1>
+    <br>
+    <div class="jumbotron">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Director</th>
+                </tr>
+            </thead>
+            <tbody id='table'>
+                <tr ng-repeat="movie in controller.movies" ui-sref="detail({id:movie.id})">
+                    <td>{{movie.id}}</td>
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.director}}</td>
+                    <!--<td><button class="btn btn-success" ng-click="controller.editCar(car.id)">Edit</button></td>-->
+                    <!--<td><button class="btn btn-success" ui-sref="editCar ({id:car.id})">Edit</button></td>
+                    <td><button class="btn btn-danger" ng-click="controller.deleteCar(car.id)">Delete</button></td>-->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

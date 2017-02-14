@@ -1,0 +1,37 @@
+<html ng-app="ManyToMany">
+<head>
+    <title>ManyToMany</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <base href="/" />
+</head>
+<body >
+    <div class="container">
+        <h1>ManyToMany</h1>
+        <div>
+          <a href="/">Home</a> /
+           <a href="/about">About</a> /
+            <a href="/addMovie" >Add Movie</a>
+
+        </div>
+        <hr />
+
+        <ui-view></ui-view>
+    </div>
+
+    <!-- Library Files -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- App Files-->
+    <script src="/ngapp/app.js"></script>
+    <script src="/ngapp/controllers/controllers.js"></script>
+    <script src="/ngapp/services/services.js"></script>
+
+
+</body>
+</html>

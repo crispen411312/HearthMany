@@ -45,8 +45,8 @@ namespace ManyToMany.API
             return Mov;
         }
 
-        [HttpPost("{id}")]
-        public IActionResult Post(int id,[FromBody]Movie mov)
+        [HttpPost]
+        public IActionResult Post([FromBody]MovieWithActors mov)
         {
             if (mov == null)
             {
@@ -60,23 +60,17 @@ namespace ManyToMany.API
                 };
                 _db.Movies.Add(tempMov);
                 _db.SaveChanges();
-                _db.MovieActors.Add(new MovieActor
+
+                foreach (Actor actor in mov.Actors) // --------------- to select 
                 {
-                    MovieId = id,
-                    ActorId = // ahhhh needs to pass in the actor id. 
-                })
+                    _db.MovieActors.Add(new MovieActor
+                    {
+                        MovieId = tempMov.Id, //-------------------this needs to be the newly 
+                        ActorId = actor.Id
+                    });
+                    _db.SaveChanges();
+                }
                 
-
-                //foreach (Actor actor in mov.) // --------------- to select 
-                //{ 
-                //     _db.MovieActors.Add(new MovieActor
-                //     {
-                //         MovieId = movLookUp.Id, //-------------------this needs to be the newly assigned move id.
-                //         ActorId = actor.Id
-                //     });
-                //    _db.SaveChanges();
-                //}
-
 
                 return Ok();
 
